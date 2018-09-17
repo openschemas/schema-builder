@@ -1,0 +1,7 @@
+specifications:
+- name : DataCatalog
+  status: revision
+  spec_type: Profile
+  use_cases_url: https://docs.google.com/spreadsheets/d/1XzrZxFIuG3TS9RU8vACoUjAvaADLmI_FrIk7O3BEkxY/edit#gid=1439268036
+  version: 0.2.0
+  parent_type: CreativeWork
