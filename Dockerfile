@@ -1,7 +1,7 @@
 FROM continuumio/miniconda3
 
 # docker build -t openbases/builder-bioschema
-# docker run -v $PWD:/data openbases/builder-bioschema
+# docker run -v $PWD:/data openbases/builder-bioschema .
 
 RUN apt-get update && apt-get install -y git wget
 RUN git clone -b remove-gdrive https://www.github.com/vsoch/map2model /code && \

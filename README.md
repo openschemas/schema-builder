@@ -5,7 +5,7 @@ to generate a bioschemas specification using [map2model](https://www.github.com/
 to generate a specification for contribution to [bioschemas](https://www.github.com/openbases/specifications). You can use the container to generate your specification as follows:
 
  1. Fill in the templates provided on Google Drive, and download as tsv
- 2. Run the [openbases/openbases-bioschema]() container to generate your specification files
+ 2. Run the [openbases/openbases-bioschema](https://hub.docker.com/r/openbases/builder-bioschema) container to generate your specification files
  3. Contribute your specification by way of a pull request to [bioschemas](https://www.github.com/openbases/specifications)
 
 That's it! More information coming soon.
@@ -54,11 +54,11 @@ Usage:
          Commands:
 
                 help: show help and exit
-                run:   generate a specification, with your subdirectory with the
+                start:   generate a specification, with your subdirectory with the
                        specifications top level folder bound to /data
                 demo: show a demo generation using files in the container
          
-         Options [run]:
+         Options [start]:
 
             --config CONFIG     configuration.yml file, defaults to configuration.yml in
                                 folder
@@ -90,7 +90,7 @@ $PWD relative to /data in the container!
 
 ```
 mkdir -p outfiles
-$ docker run -it -v $PWD:/data openbases/builder-bioschema run --config /data/specifications/configuration.yml --output /data/outfiles
+$ docker run -it -v $PWD:/data openbases/builder-bioschema start --config /data/specifications/configuration.yml --output /data/outfiles
 ```
 
 Here are your files!
