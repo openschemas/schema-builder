@@ -13,11 +13,11 @@ usage () {
          Commands:
 
                 help: show help and exit
-                run:   generate a specification, with your subdirectory with the
+                start: generate a specification, with your subdirectory with the
                        specifications top level folder bound to /data
                 demo: show a demo generation using files in the container
          
-         Options [run]:
+         Options [start]:
 
             --config CONFIG     configuration.yml file, defaults to configuration.yml in
                                 folder
@@ -49,7 +49,7 @@ while true; do
             shift
             OPENBASES_DEMO="yes"
         ;;
-        run)
+        run|start)
             shift
             OPENBASES_RUN="yes"
         ;;
