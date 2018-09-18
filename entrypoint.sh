@@ -19,8 +19,7 @@ usage () {
          
          Options [start]:
 
-            --config CONFIG     configuration.yml file, defaults to configuration.yml in
-                                folder
+            --config CONFIG     configuration.yml file, defaults to configuration.yml
             --folder SPECS      folder with input specification subfolders
             --output OUTFOLDER  folder to write output specification subfolders
          "
