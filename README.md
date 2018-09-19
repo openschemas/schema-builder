@@ -1,5 +1,7 @@
 # Open Schemas Builder
 
+![docs/img/openbases.png](docs/img/openbases.png)
+
 This is an [openbases](https://openbases.github.io) builder for Open Schemas
 to generate a bioschemas specification using [map2model](https://www.github.com/openschemas/map2model)
 to generate a specification for contribution to [schema.org](https://www.schema.org). You can use the container to generate your specification as follows:
