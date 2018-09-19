@@ -1,12 +1,12 @@
-# Open Bases Bioschema Template
+# Open Schemas Builder
 
-This is an [openbases](https://openbases.github.io) builder
-to generate a bioschemas specification using [map2model](https://www.github.com/vsoch/map2model)
-to generate a specification for contribution to [bioschemas](https://www.github.com/openbases/specifications). You can use the container to generate your specification as follows:
+This is an [openbases](https://openbases.github.io) builder for Open Schemas
+to generate a bioschemas specification using [map2model](https://www.github.com/openschemas/map2model)
+to generate a specification for contribution to [schema.org](https://www.schema.org). You can use the container to generate your specification as follows:
 
  1. Fill in the templates provided on Google Drive, and download as tsv
  2. Run the [openbases/openbases-bioschema](https://hub.docker.com/r/openbases/builder-bioschema) container to generate your specification files
- 3. Contribute your specification by way of a pull request to [bioschemas](https://www.github.com/openbases/specifications)
+ 3. Contribute your specification by way of a pull request to [openschemas](https://www.github.com/openschemas/specifications) (still under development)
 
 That's it! More information coming soon.
 
