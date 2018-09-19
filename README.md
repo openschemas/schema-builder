@@ -3,11 +3,11 @@
 ![docs/img/openbases.png](docs/img/openbases.png)
 
 This is an [openbases](https://openbases.github.io) builder for Open Schemas
-to generate a bioschemas specification using [map2model](https://www.github.com/openschemas/map2model)
+to generate a specification using [map2model](https://www.github.com/openschemas/map2model)
 to generate a specification for contribution to [schema.org](https://www.schema.org). You can use the container to generate your specification as follows:
 
  1. Fill in the templates provided on Google Drive, and download as tsv
- 2. Run the [openbases/openbases-bioschema](https://hub.docker.com/r/openbases/builder-bioschema) container to generate your specification files
+ 2. Run the [openschemas/schema-builder](https://hub.docker.com/r/openschemas/schema-builder) container to generate your specification files
  3. Contribute your specification by way of a pull request to [openschemas](https://www.github.com/openschemas/specifications) (still under development)
 
 That's it! More information coming soon.
@@ -44,7 +44,7 @@ You now can generate your specification files with the provided Docker container
 If you need to ask for help, just run the container:
 
 ```bash
-$ docker run openbases/builder-bioschema
+$ docker run openschemas/schema-builder
 Usage:
 
 
@@ -73,7 +73,7 @@ There are files provided in the container (the same demo ones in this folder)
 that you can use (without mounting a volume) to see what output should look like:
 
 ```bash
-$ docker run -it openbases/builder-bioschema demo
+$ docker run -it openschemas/schema-builder demo
 ```
 
 ### See an Example
@@ -81,8 +81,8 @@ You can next try the local files provided in this repository to learn how to mou
 the volume correctly. If you haven't already, clone the repository and go for it!
 
 ```bash
-$ git clone https://www.github.com/openbases/builder-bioschema
-$ cd builder-bioschema
+$ git clone https://www.github.com/openschemas/schema-builder
+$ cd schema-builder
 ```
 
 Let's also going to set the output folders and input configuration file to
@@ -92,7 +92,7 @@ $PWD relative to /data in the container!
 
 ```
 mkdir -p outfiles
-$ docker run -it -v $PWD:/data openbases/builder-bioschema start --config /data/specifications/configuration.yml --output /data/outfiles
+$ docker run -it -v $PWD:/data openschemas/schema-builder start --config /data/specifications/configuration.yml --output /data/outfiles
 ```
 
 Here are your files!
@@ -109,35 +109,14 @@ outfiles/
 
 Now you know how to do your own!
 
-### Contribute to bioschemas
+### Contribute to schemas.org
 
-When you have your finished folder, fork the bioschemas repository,
-clone your fork, checkout a new branch, and add your folder
-to the folder "specifications". Then issue a pull request!
-
-```bash
-git clone https://www.github.com/<username>/specifications
-cd specifications
-git checkout -b add/spec-datacatalog
-```
-add your folder, e.g. DataCatalog, to "specifications"
-
-```bash
-cp -R <generation_folder>/specifications/DataCatalog $PWD
-git add DataCatalog
-```
-
-Then open a pull request to the [main repository](https://github.com/BioSchemas/specifications).
-
-## Can we make this easier?
-
-Yes! We will provide a continuous integration template (soon) for you to do this,
-likely in the next few days.
+Instructions coming soon! I (@vsoch) have to figure this out.
 
 ## Development
 
 Build the container
 
 ```bash
-$ docker build -t openbases/builder-bioschemas .
+$ docker build -t openschemas/schema-builder .
 ```
