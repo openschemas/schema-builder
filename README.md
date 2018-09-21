@@ -56,7 +56,7 @@ Usage:
          Commands:
 
                 help: show help and exit
-                start:   generate a specification, with your subdirectory with the
+                start: generate a specification, with your subdirectory with the
                        specifications top level folder bound to /data
                 demo: show a demo generation using files in the container
          
@@ -66,6 +66,10 @@ Usage:
                                 folder
             --folder SPECS      folder with input specification subfolders
             --output OUTFOLDER  folder to write output specification subfolders
+            --template TEMPLATE template for Jekyll rendering (use default)
+            --repo REPO         repository specification is intended for
+                                defaults to openschemas/specifications
+         
 ```
 
 ### See a demo
@@ -92,22 +96,25 @@ $PWD relative to /data in the container!
 
 ```
 mkdir -p outfiles
-$ docker run -it -v $PWD:/data openschemas/schema-builder start --config /data/specifications/configuration.yml --output /data/outfiles
+$ docker run -v $PWD:/data openschemas/schema-builder start --config /data/specifications/configuration.yml --output /data/outfiles
 ```
 
 Here are your files!
 
 ```bash
-$ tree outfiles/
-outfiles/
+tree outfiles/
 └── DataCatalog
+    ├── DataCatalog.html
+    ├── DataCatalog.yml
     ├── examples
     │   └── README.md
-    ├── README.md
-    └── specification.html
+    └── README.md
 ```
 
-Now you know how to do your own!
+Now you know how to do your own! You would want to specify the `configuration.yml` file
+via `--config` and then output via `--output` and make sure your container mappings
+are correct (as per the example above). If you have any trouble, please 
+[open an issue](https://www.github.com/openschemas/schema-builder).
 
 ### Contribute to schemas.org
 

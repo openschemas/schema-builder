@@ -23,6 +23,9 @@ usage () {
                                 folder
             --folder SPECS      folder with input specification subfolders
             --output OUTFOLDER  folder to write output specification subfolders
+            --template TEMPLATE template for Jekyll rendering (use default)
+            --repo REPO         repository specification is intended for
+                                defaults to openschemas/specifications
          "
 }
 
@@ -57,6 +60,18 @@ while true; do
             shift
             echo "Input specifications folder set to ${1}"
             ARGS="${ARGS} --folder ${1}"
+            shift
+        ;;
+        --template)
+            shift
+            echo "Template set to ${1}"
+            ARGS="${ARGS} --template ${1}"
+            shift
+        ;;
+        --repo)
+            shift
+            echo "Specification repository set to ${1}"
+            ARGS="${ARGS} --repo ${1}"
             shift
         ;;
         --config)
