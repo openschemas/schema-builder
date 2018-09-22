@@ -1,5 +1,9 @@
 FROM continuumio/miniconda3
 
+# This Dockerfile is meant to drive a build in Continuous Integration
+# for openschemas. We build from the master branch, which was just
+# merged given we are using CI.
+
 # docker build --no-cache -t openschemas/schema-builder .
 # docker run -v $PWD:/data openschemas/schema-builder demo
 
@@ -8,5 +12,8 @@ RUN git clone https://www.github.com/openschemas/map2model /code && \
     mkdir -p /data/docs/spec_files /data/specifications
 ADD . /code
 WORKDIR /code
-RUN /opt/conda/bin/pip install openschemas
+RUN git clone https://www.github.com/openschemas/openschemas-python && \
+    cd openschemas-python && \
+    python setup.py install
+WORKDIR /code
 ENTRYPOINT ["/bin/bash", "/code/entrypoint.sh"]

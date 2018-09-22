@@ -1,10 +1,12 @@
 # Open Schemas Builder
 
-![docs/img/openbases.png](docs/img/openbases.png)
+![https://github.com/openschemas/spec-template/raw/master/img/hexagon_square_small.png](https://github.com/openschemas/spec-template/raw/master/img/hexagon_square_small.png)
 
 This is an [openbases](https://openbases.github.io) builder for Open Schemas
-to generate a specification using [map2model](https://www.github.com/openschemas/map2model)
-to generate a specification for contribution to [schema.org](https://www.schema.org). You can use the container to generate your specification as follows:
+to generate a specification using the [map2model](https://www.github.com/openschemas/map2model)
+example that uses [openschemas-python](https://www.github.com/openschemas/openschemas-python/)
+to generate a specification for contribution to [schema.org](https://www.schema.org). 
+You can use the container to generate your specification as follows:
 
  1. Fill in the templates provided on Google Drive, and download as tsv
  2. Run the [openschemas/schema-builder](https://hub.docker.com/r/openschemas/schema-builder) container to generate your specification files
