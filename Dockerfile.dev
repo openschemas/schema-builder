@@ -7,13 +7,19 @@ FROM continuumio/miniconda3
 # docker build --no-cache -t openschemas/schema-builder .
 # docker run -v $PWD:/data openschemas/schema-builder demo
 
+# Default branch to use is master, unless specified otherwise
+
+ARG OPENSCHEMAS_BRANCH=master
+ARG OPENSCHEMAS_REPO=openschemas/openschemas-python
+
 RUN apt-get update && apt-get install -y git wget
 RUN git clone https://www.github.com/openschemas/map2model /code && \
     mkdir -p /data/docs/spec_files /data/specifications
 ADD . /code
 WORKDIR /code
-RUN git clone https://www.github.com/openschemas/openschemas-python && \
+RUN git clone -b ${OPENSCHEMAS_BRANCH} https://www.github.com/openschemas/openschemas-python && \
     cd openschemas-python && \
-    python setup.py install
+    python setup.py install && \
+    echo "Installed openschemas from ${OPENSCHEMAS_REPO}, branch ${OPENSCHEMAS_BRANCH}"
 WORKDIR /code
 ENTRYPOINT ["/bin/bash", "/code/entrypoint.sh"]
