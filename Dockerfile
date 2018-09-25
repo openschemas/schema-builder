@@ -9,4 +9,4 @@ RUN git clone https://www.github.com/openschemas/map2model /code && \
 ADD . /code
 WORKDIR /code
 RUN /opt/conda/bin/pip install openschemas
-ENTRYPOINT ["/bin/bash", "/code/entrypoint.sh"]
+ENTRYPOINT ["map2model"]

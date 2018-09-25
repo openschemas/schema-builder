@@ -22,4 +22,4 @@ RUN git clone -b ${OPENSCHEMAS_BRANCH} https://www.github.com/openschemas/opensc
     python setup.py install && \
     echo "Installed openschemas from ${OPENSCHEMAS_REPO}, branch ${OPENSCHEMAS_BRANCH}"
 WORKDIR /code
-ENTRYPOINT ["/bin/bash", "/code/entrypoint.sh"]
+ENTRYPOINT ["map2model"]
